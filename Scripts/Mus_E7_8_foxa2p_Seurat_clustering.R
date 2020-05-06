@@ -1,4 +1,4 @@
-## Clustering analysis for Foxa2+ E7.5-E8.5 cells with more than 6,000 expressed genes
+## Clustering analysis for Foxa2+ E7.5-E8.5 cells with more than 6,000 expressed genes 
 ## and identification of marker genes of each cell cluster.
 
 library(Seurat)
