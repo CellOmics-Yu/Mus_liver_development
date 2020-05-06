@@ -47,7 +47,7 @@ mat1 <- count[rownames(ediff),rownames(group1)]
 mat2 <- count[rownames(ediff),rownames(group2)]
 fc <- log2(rowMeans(mat1+1)/rowMeans(mat2+1))
 
-# write out a table with all the results, showing most significantly different genes (in both directions) on top
+# write out a table with all the results, showing most significantly different genes (in both directions) on the top
 ediff <- cbind(ediff,ref[rownames(ediff),],group1=rowMeans(mat1),group2=rowMeans(mat2),log2FC=fc)
 colnames(ediff)[9:10]=c(args[3],args[4])
 write.table(ediff[order(abs(ediff$Z), decreasing = TRUE), ], file = paste(prefix, "DE_results.txt",sep="_"), row.names = TRUE, col.names = TRUE, sep = "\t", quote = FALSE)
