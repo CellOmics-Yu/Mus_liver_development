@@ -53,10 +53,10 @@ cluster.markers <- FindAllMarkers(mus, only.pos = TRUE, min.pct = 0.5, thresh.us
 cluster.markers %>% group_by(cluster) %>% top_n(20, avg_diff) -> top20
 DoHeatmap(mus, genes.use = top20$gene, slim.col.label = TRUE, remove.key = FALSE,cex.row=8)
 
-save.image("E11_15_sc_seurat_analysis.RData")
-
 # Lable cells with embryo stages
 cluster <- factor(cell_anno$Stage,levels=c("E11.5","E12.5","E13.5","E14.5","E14.5_GFPn","E15.5"))
 names(cluster)<-rownames(cell_anno)
 mus@ident <- cluster
 TSNEPlot(mus,pt.size = 1.5,colors.use =  c("#FFFF33","#A65628","#F781BF","#191970","#90EE90","#E7298A"))
+
+save.image("E11_15_sc_seurat_analysis.RData")
