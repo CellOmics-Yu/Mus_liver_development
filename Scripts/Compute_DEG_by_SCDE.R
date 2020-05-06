@@ -1,3 +1,4 @@
+## Single cell differential expression analysis using single cell RNA-seq data with the scde package.
 ## Usage: Rscript <cell_anno> <group1> <group2> <out_prefix>
 library(methods)
 library(scde)
